@@ -10,6 +10,10 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Cambria",
+    fontSize: 10,
+    h1: {
+      fontFamily: "Trajan Pro",
+    },
   },
   components: {
     MuiCard: {

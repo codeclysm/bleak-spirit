@@ -1,18 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import { ThemeProvider } from "@mui/material";
 
 import reportWebVitals from "./reportWebVitals";
 import theme from "./theme";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RouteLobby from "./RouteLobby";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const router = createBrowserRouter([
+  {
+    path: "/lobby/:lobbyId",
+    element: <RouteLobby />,
+  },
+]);
+
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>
 );
